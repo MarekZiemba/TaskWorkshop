@@ -1,2 +1,2 @@
-# TaskWorkshop1
+# Workshop 1
 CodersLab Workshop 1
