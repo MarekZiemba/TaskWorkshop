@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class menu_option_add {
@@ -19,7 +20,12 @@ public class menu_option_add {
                 if (Files.notExists(path)) {
                     Files.createFile(path);
                 }
+                List<String> lines = Files.readAllLines(path);
                 StringBuilder sb = new StringBuilder();
+                for (String line : lines) {
+                    sb.append(line).append("\n");
+                }
+
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println(ConsoleColors.BLUE + "Here you can ADD new tasks to the List" + ConsoleColors.RESET);
@@ -27,7 +33,7 @@ public class menu_option_add {
                 System.out.print("I want to: ➤ ");
 
                 boolean shouldContinue = true;
-                String [] tasks;
+//                String [] tasks;
                 while (shouldContinue) {
                     String line = scanner.nextLine();
                     switch (line) {

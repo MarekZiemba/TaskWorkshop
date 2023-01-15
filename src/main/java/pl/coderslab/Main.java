@@ -32,7 +32,7 @@ public class Main {
                     shouldContinue = false;
                     break;
                 default:
-                    System.out.println("Please select a " + ConsoleColors.PURPLE_BOLD + "correct" + ConsoleColors.RESET + " option.");
+                    System.out.println("Please select a " + ConsoleColors.PURPLE_BOLD + "correct" + ConsoleColors.RESET + " option.\n");
             }
         }
 

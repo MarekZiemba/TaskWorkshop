@@ -10,12 +10,12 @@ public class menu_option_list {
     }
 
     public void list () {
-        System.out.println(ConsoleColors.GREEN_BOLD + "TO DO list:" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.GREEN_BOLD + "\n    \"TO DO\" list:" + ConsoleColors.RESET);
         File file = new File("TaskManager/tasks.csv");
         StringBuilder reading = new StringBuilder();
         try {
             Scanner scan = new Scanner(file);
-            int lineNumber = 0;
+            int lineNumber = 1;
             while (scan.hasNextLine()) {
                 reading.append(ConsoleColors.GREEN_BOLD + lineNumber + ConsoleColors.RESET + " : " + scan.nextLine() + "\n");
                 lineNumber++;
