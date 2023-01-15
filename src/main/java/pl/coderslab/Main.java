@@ -21,17 +21,18 @@ public class Main {
                     menu_option_add.writeToFile();
                     break;
                 case "remove":
-                    System.out.println("OPCJA REMOVE");
+                    System.out.println("OPCJA REMOVE - Work in progress");
                     break;
                 case "list":
                     menu_option_list menu_option_list = new menu_option_list();
                     menu_option_list.list();
                     break;
                 case "exit":
-                    System.out.println("See you next time!");
+                    System.out.println("\n " + ConsoleColors.WHITE_BRIGHT + "Don't forget to do the tasks!"+ ConsoleColors.RESET + "\n See you next time!");
                     shouldContinue = false;
+                    break;
                 default:
-                    System.out.println("Please select a correct option.");
+                    System.out.println("Please select a " + ConsoleColors.PURPLE_BOLD + "correct" + ConsoleColors.RESET + " option.");
             }
         }
 
