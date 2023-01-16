@@ -2,6 +2,7 @@ package pl.coderslab;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -21,7 +22,8 @@ public class Main {
                     menu_option_add.writeToFile();
                     break;
                 case "remove":
-                    System.out.println("OPCJA REMOVE - Work in progress");
+                    menu_option_remove menu_option_remove = new menu_option_remove();
+                    menu_option_remove.removeFromFile();
                     break;
                 case "list":
                     menu_option_list menu_option_list = new menu_option_list();

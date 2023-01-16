@@ -25,9 +25,6 @@ public class menu_option_list {
         }
         System.out.println(reading.toString());
 
-
     }
-
-
 
 }

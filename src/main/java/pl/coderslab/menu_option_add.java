@@ -14,7 +14,7 @@ public class menu_option_add {
 
     }
 
-        public  void writeToFile() {
+        public void writeToFile() {
             Path path = Paths.get("TaskManager/tasks.csv");
             try {
                 if (Files.notExists(path)) {
@@ -28,29 +28,29 @@ public class menu_option_add {
 
                 Scanner scanner = new Scanner(System.in);
 
-                System.out.println(ConsoleColors.BLUE + "Here you can ADD new tasks to the List" + ConsoleColors.RESET);
+                System.out.println(ConsoleColors.BLUE + "\nHere you can ADD new tasks to the List" + ConsoleColors.RESET);
                 System.out.println("Type: new to \"add\", or \"exit\" to return to Main Menu");
                 System.out.print("I want to: ➤ ");
 
                 boolean shouldContinue = true;
-//                String [] tasks;
                 while (shouldContinue) {
                     String line = scanner.nextLine();
                     switch (line) {
                         case "exit":
                             shouldContinue = false;
+                            System.out.println("");
                             break;
                         case "add":
-                            System.out.println("Please add task description");
+                            System.out.print("Please add task description: \n➤ ");
                             line = scanner.nextLine();
                             sb.append(line).append(" "); //zbierammy w SB
-                            System.out.println("Please add task due time: yyyy-mm-dd");
+                            System.out.print("Please add task due time: yyyy-mm-dd \n➤ ");
                             line = scanner.nextLine();
                             sb.append(line).append(" "); //zbierammy w SB
-                            System.out.println("Is the task important: true/false");
+                            System.out.print("Is the task important: true/false \n➤ ");
                             line = scanner.nextLine();
                             sb.append(line).append("\n"); //zbierammy w SB
-                            System.out.print("I want to: ➤ ");
+                            System.out.print(ConsoleColors.PURPLE_BOLD + "New entry has been saved" + ConsoleColors.RESET + "\n\nNext I want to: add/exit \n➤ ");
                             break;
 
                         default:
@@ -60,7 +60,6 @@ public class menu_option_add {
                             break;
                     }
                 }
-
 
                 Files.writeString(path, sb);  //zapis (nadpisuje plik)
             } catch (IOException e) {
