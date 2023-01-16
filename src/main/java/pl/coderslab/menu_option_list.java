@@ -21,10 +21,9 @@ public class menu_option_list {
                 lineNumber++;
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Brak pliku.");
+            System.out.println("File does not exist." + e.getMessage());
         }
         System.out.println(reading.toString());
-
     }
 
 }

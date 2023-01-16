@@ -1,7 +1,5 @@
 package pl.coderslab;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -29,7 +27,7 @@ public class menu_option_add {
                 Scanner scanner = new Scanner(System.in);
 
                 System.out.println(ConsoleColors.BLUE + "\nHere you can ADD new tasks to the List" + ConsoleColors.RESET);
-                System.out.println("Type: new to \"add\", or \"exit\" to return to Main Menu");
+                System.out.println("Type " + ConsoleColors.BLUE + "add" + ConsoleColors.RESET + " to add new task, or " + ConsoleColors.BLUE + "exit" + ConsoleColors.RESET + " to return to Main Menu.");
                 System.out.print("I want to: ➤ ");
 
                 boolean shouldContinue = true;
@@ -43,14 +41,15 @@ public class menu_option_add {
                         case "add":
                             System.out.print("Please add task description: \n➤ ");
                             line = scanner.nextLine();
-                            sb.append(line).append(" "); //zbierammy w SB
+                            sb.append(line).append(" "); //zbieramy w SB
                             System.out.print("Please add task due time: yyyy-mm-dd \n➤ ");
                             line = scanner.nextLine();
-                            sb.append(line).append(" "); //zbierammy w SB
+                            sb.append(line).append(" "); //zbieramy w SB
                             System.out.print("Is the task important: true/false \n➤ ");
                             line = scanner.nextLine();
-                            sb.append(line).append("\n"); //zbierammy w SB
-                            System.out.print(ConsoleColors.PURPLE_BOLD + "New entry has been saved" + ConsoleColors.RESET + "\n\nNext I want to: add/exit \n➤ ");
+                            sb.append(line).append("\n"); //zbieramy w SB
+                            System.out.print(ConsoleColors.PURPLE_BOLD + "New entry has been saved" + ConsoleColors.RESET +
+                                    "\n\nType " + ConsoleColors.BLUE + "add" + ConsoleColors.RESET + " to add another task, or " + ConsoleColors.BLUE + "exit" + ConsoleColors.RESET + " to exit to Main Menu:\n➤ ");
                             break;
 
                         default:
@@ -62,8 +61,9 @@ public class menu_option_add {
                 }
 
                 Files.writeString(path, sb);  //zapis (nadpisuje plik)
+
             } catch (IOException e) {
-                System.err.println("Błąd zapisu/odczytu: " + e.getMessage());
+                System.err.println("Input/Output Error: " + e.getMessage());
             }
         }
 

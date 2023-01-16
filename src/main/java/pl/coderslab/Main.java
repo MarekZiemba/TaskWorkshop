@@ -1,13 +1,10 @@
 package pl.coderslab;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        String [] mainMenu = {"add", "remove", "list", "exit"};
+
         Scanner scanner = new Scanner(System.in);
 
         boolean shouldContinue = true;
@@ -37,6 +34,6 @@ public class Main {
                     System.out.println("Please select a " + ConsoleColors.PURPLE_BOLD + "correct" + ConsoleColors.RESET + " option.\n");
             }
         }
-
     }
+
 }

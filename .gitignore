@@ -1,4 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
+
+pom.xml
+TaskManager.iml
+tasks.csv
+commons-lang3-3.9.jar
+
 ### Eclipse template
 .metadata
 bin/
