@@ -2,6 +2,10 @@
 CodersLab Workshop 1
 The task is to compose a 'Tasks' program, that will keep a list of user's to do list.
 The program should be able to:
-- read a saved list of tasks from the file;
-- read from console new tasks and add them to the list and save it to the file;
-- read from console witch task does the user want to remove from the list and update the file accordingly;
+- Read user commands from the console;
+- Display a saved list of tasks from the file;
+- Add new entries to the list and save them to the file.
+The program validates the proper date format and correct "is important: true/false" parameter;
+- Remove entries from the list and update the file accordingly.
+Program informs the user when the last task has been deleted and doesn't allow to remove a task, when the list is empty.
+

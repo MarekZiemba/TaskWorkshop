@@ -1,5 +1,7 @@
 package pl.coderslab;
 
+import org.apache.commons.validator.GenericValidator;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -42,12 +44,34 @@ public class menu_option_add {
                             System.out.print("Please add task description: \n➤ ");
                             line = scanner.nextLine();
                             sb.append(line).append(" "); //zbieramy w SB
-                            System.out.print("Please add task due time: yyyy-mm-dd \n➤ ");
-                            line = scanner.nextLine();
+
+                            boolean assertDate = false;
+                            int indexDate = 0;
+                            while (!assertDate) {
+                                if (indexDate == 0) {
+                                    indexDate++;
+                                    System.out.print("Please add task due time: yyyy-mm-dd \n➤ ");
+                                    line = scanner.nextLine();
+                                    assertDate = (GenericValidator.isDate(line, "yyyy-MM-dd", true));
+                                } else {
+                                    System.out.print("Please add task due time: yyyy-mm-dd \nHint: Depending on the month, date should be in range:\n" +
+                                            "mm: (01 - 12), dd (01-31) or (01-29) for February.\n➤ ");
+                                    line = scanner.nextLine();
+                                    assertDate = (GenericValidator.isDate(line, "yyyy-MM-dd", true));
+                                }
+                            }
                             sb.append(line).append(" "); //zbieramy w SB
-                            System.out.print("Is the task important: true/false \n➤ ");
-                            line = scanner.nextLine();
+
+                            boolean assertImportance = false;
+                            while (!assertImportance) {
+                                System.out.print("Is the task important: true/false \n➤ ");
+                                line = scanner.nextLine();
+                                if (line.equals("true") || line.equals("false")) {
+                                    assertImportance = true;
+                                }
+                            }
                             sb.append(line).append("\n"); //zbieramy w SB
+
                             System.out.print(ConsoleColors.PURPLE_BOLD + "New entry has been saved" + ConsoleColors.RESET +
                                     "\n\nType " + ConsoleColors.BLUE + "add" + ConsoleColors.RESET + " to add another task, or " + ConsoleColors.BLUE + "exit" + ConsoleColors.RESET + " to exit to Main Menu:\n➤ ");
                             break;
@@ -66,5 +90,7 @@ public class menu_option_add {
                 System.err.println("Input/Output Error: " + e.getMessage());
             }
         }
+
+
 
 }

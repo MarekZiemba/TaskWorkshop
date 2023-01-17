@@ -23,9 +23,10 @@ public class menu_option_remove {
                 System.out.println(ConsoleColors.PURPLE_BOLD + "File didn't exist. New file has been created\n" + ConsoleColors.RESET);
             }
             boolean shouldContinue = true;
+            boolean lastTask = false;
 
-             if (count("TaskManager/tasks.csv") == 0) {
-                 System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new task?" + ConsoleColors.RESET);
+             if (count("TaskManager/tasks.csv") < 1) {
+                 System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new tasks?" + ConsoleColors.RESET);
                  menu_option_add menu_option_add = new menu_option_add();
                  menu_option_add.writeToFile();
                  shouldContinue = false;
@@ -33,7 +34,7 @@ public class menu_option_remove {
 
                     Scanner scanner = new Scanner(System.in);
 
-            while (shouldContinue) {
+            while (shouldContinue && !lastTask) {
                 System.out.println(ConsoleColors.BLUE + "\nHere you can REMOVE tasks from the List" + ConsoleColors.RESET);
                 System.out.println("Type " + ConsoleColors.BLUE + "remove" + ConsoleColors.RESET + " to remove task, or " + ConsoleColors.BLUE + "exit" + ConsoleColors.RESET + " to return to Main Menu.");
                 System.out.print("I want to: ➤ ");
@@ -65,14 +66,18 @@ public class menu_option_remove {
                                     String[] taskArray = sb.toString().split("\n");
                                     String[] newTaskArray;
 
+
                                     if (i > 0 && i < taskArray.length + 1) {
-                                        if (i == 1 && taskArray.length == 1) {
+                                        if (i == 1 && taskArray.length == 1) { // jesli kasujemy ostatnie zadanie
+                                            lastTask = true;
                                             index = Integer.parseInt(task);
                                             isTaskNumeric = false;
-                                            System.out.print(ConsoleColors.PURPLE_BOLD + "\nDELETED: " + ConsoleColors.RESET + taskArray[0] +
-                                                    "\n\nType " + ConsoleColors.BLUE + "remove" + ConsoleColors.RESET + " to remove another task, or " + ConsoleColors.BLUE + "exit" + ConsoleColors.RESET + " to exit to Main Menu:\n➤ ");
+                                            System.out.print(ConsoleColors.PURPLE_BOLD + "\nDELETED: " + ConsoleColors.RESET + taskArray[0]);
                                             String emptyList = ("");
                                             Files.writeString(path, emptyList);  //zapis (nadpisuje plik)
+                                            System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new tasks?" + ConsoleColors.RESET);
+                                            menu_option_add menu_option_add = new menu_option_add();
+                                            menu_option_add.writeToFile();
 
                                         } else {
                                             index = Integer.parseInt(task);
