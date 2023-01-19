@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class menu_option_add {
+public class menuOptionAdd {
     public static void main(String[] args) {
 
     }

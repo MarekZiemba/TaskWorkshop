@@ -3,9 +3,10 @@ package pl.coderslab;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-import static pl.coderslab.menu_option_remove.count;
 
-public class menu_option_list {
+import static pl.coderslab.menuOptionRemove.count;
+
+public class menuOptionList {
     public static void main(String[] args) {
 
     }
