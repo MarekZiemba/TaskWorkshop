@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class menu_option_remove {
+public class menuOptionRemove {
     public static void main(String[] args) {
 
     }
@@ -27,8 +27,8 @@ public class menu_option_remove {
 
              if (count("TaskManager/tasks.csv") < 1) {
                  System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new tasks?" + ConsoleColors.RESET);
-                 menu_option_add menu_option_add = new menu_option_add();
-                 menu_option_add.writeToFile();
+                 menuOptionAdd menuOptionAdd = new menuOptionAdd();
+                 menuOptionAdd.writeToFile();
                  shouldContinue = false;
              }
 
@@ -45,8 +45,8 @@ public class menu_option_remove {
                         System.out.println("");
                         break;
                     case "remove":
-                        menu_option_list menu_option_list = new menu_option_list();
-                        menu_option_list.list();
+                        menuOptionList menuOptionList = new menuOptionList();
+                        menuOptionList.list();
 
                             System.out.print(ConsoleColors.BLUE + "Which task do you want to delete?" + ConsoleColors.RESET + "\nTask number: ➤ ");
                             Scanner taskNumber = new Scanner(System.in);
@@ -76,8 +76,8 @@ public class menu_option_remove {
                                             String emptyList = ("");
                                             Files.writeString(path, emptyList);  //zapis (nadpisuje plik)
                                             System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new tasks?" + ConsoleColors.RESET);
-                                            menu_option_add menu_option_add = new menu_option_add();
-                                            menu_option_add.writeToFile();
+                                            menuOptionAdd menuOptionAdd = new menuOptionAdd();
+                                            menuOptionAdd.writeToFile();
 
                                         } else {
                                             index = Integer.parseInt(task);

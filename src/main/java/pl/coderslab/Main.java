@@ -10,21 +10,21 @@ public class Main {
         boolean shouldContinue = true;
 
         while (shouldContinue) {
-            main_menu_list main_menu_list = new main_menu_list();
-            main_menu_list.list();
+            mainMenuList mainMenuList = new mainMenuList();
+            mainMenuList.list();
             String input = scanner.nextLine();
             switch (input) {
                 case "add":
-                    menu_option_add menu_option_add = new menu_option_add();
-                    menu_option_add.writeToFile();
+                    menuOptionAdd menuOptionAdd = new menuOptionAdd();
+                    menuOptionAdd.writeToFile();
                     break;
                 case "remove":
-                    menu_option_remove menu_option_remove = new menu_option_remove();
-                    menu_option_remove.removeFromFile();
+                    menuOptionRemove menuOptionRemove = new menuOptionRemove();
+                    menuOptionRemove.removeFromFile();
                     break;
                 case "list":
-                    menu_option_list menu_option_list = new menu_option_list();
-                    menu_option_list.list();
+                    menuOptionList menuOptionList = new menuOptionList();
+                    menuOptionList.list();
                     break;
                 case "exit":
                     System.out.println("\n " + ConsoleColors.WHITE_BRIGHT + "Don't forget to do the tasks!"+ ConsoleColors.RESET + "\n See you next time!");

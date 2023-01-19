@@ -1,6 +1,6 @@
 package pl.coderslab;
 
-public class main_menu_list {
+public class mainMenuList {
 
     public static void main(String[] args) {
 
@@ -16,9 +16,6 @@ public class main_menu_list {
                     + "■          ➤ " + ConsoleColors.BLUE + "exit" + ConsoleColors.RESET + "          ■");
             System.out.println("■■■■■■■■■■■■■■■■■■■■■■■■■■■■");
             System.out.print("I want to: ➤ ");
-
         }
-
-
 
 }
