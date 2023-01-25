@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-public class menuOptionRemove {
+public class MenuOptionRemove {
     public static void main(String[] args) {
 
     }
@@ -27,7 +27,7 @@ public class menuOptionRemove {
 
              if (count("TaskManager/tasks.csv") < 1) {
                  System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new tasks?" + ConsoleColors.RESET);
-                 menuOptionAdd menuOptionAdd = new menuOptionAdd();
+                 MenuOptionAdd menuOptionAdd = new MenuOptionAdd();
                  menuOptionAdd.writeToFile();
                  shouldContinue = false;
              }
@@ -45,7 +45,7 @@ public class menuOptionRemove {
                         System.out.println("");
                         break;
                     case "remove":
-                        menuOptionList menuOptionList = new menuOptionList();
+                        MenuOptionList menuOptionList = new MenuOptionList();
                         menuOptionList.list();
 
                             System.out.print(ConsoleColors.BLUE + "Which task do you want to delete?" + ConsoleColors.RESET + "\nTask number: ➤ ");
@@ -76,7 +76,7 @@ public class menuOptionRemove {
                                             String emptyList = ("");
                                             Files.writeString(path, emptyList);  //zapis (nadpisuje plik)
                                             System.out.println(ConsoleColors.RED_BOLD + "\nThe List is empty. Would you like to ADD new tasks?" + ConsoleColors.RESET);
-                                            menuOptionAdd menuOptionAdd = new menuOptionAdd();
+                                            MenuOptionAdd menuOptionAdd = new MenuOptionAdd();
                                             menuOptionAdd.writeToFile();
 
                                         } else {

@@ -15,15 +15,15 @@ public class Main {
             String input = scanner.nextLine();
             switch (input) {
                 case "add":
-                    menuOptionAdd menuOptionAdd = new menuOptionAdd();
+                    MenuOptionAdd menuOptionAdd = new MenuOptionAdd();
                     menuOptionAdd.writeToFile();
                     break;
                 case "remove":
-                    menuOptionRemove menuOptionRemove = new menuOptionRemove();
+                    MenuOptionRemove menuOptionRemove = new MenuOptionRemove();
                     menuOptionRemove.removeFromFile();
                     break;
                 case "list":
-                    menuOptionList menuOptionList = new menuOptionList();
+                    MenuOptionList menuOptionList = new MenuOptionList();
                     menuOptionList.list();
                     break;
                 case "exit":

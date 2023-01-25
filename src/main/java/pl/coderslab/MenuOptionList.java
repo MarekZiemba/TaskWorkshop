@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import static pl.coderslab.menuOptionRemove.count;
+import static pl.coderslab.MenuOptionRemove.count;
 
-public class menuOptionList {
+public class MenuOptionList {
     public static void main(String[] args) {
 
     }
